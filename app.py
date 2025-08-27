@@ -3,7 +3,6 @@ from tkinter import messagebox
 import subprocess
 import os
 
-# Define functions to run each script
 def run_face_attendance():
     try:
         subprocess.run(["python", "face_attendance.py"], check=True)
@@ -59,12 +58,10 @@ def generate_encodes():
 def quit_application():
     app.quit()
 
-# Create the main application window
 app = tk.Tk()
 app.title("Attendance Management System")
 app.geometry("1280x720")
 
-# Create a frame to hold the buttons and descriptions
 frame = tk.Frame(app)
 frame.pack(pady=20, padx=20, anchor="w")
 
@@ -74,7 +71,6 @@ def create_button_with_description(frame, text, description, command, row, butto
     label = tk.Label(frame, text=description, wraplength=400, justify="left")
     label.grid(row=row, column=1, padx=10, pady=5, sticky="w")
 
-# creating the buttons by calling above function
 create_button_with_description(
     frame, "Run Face Attendance",
     "Run the face attendance script to record student attendance using facial recognition.",
@@ -113,9 +109,7 @@ create_button_with_description(
     "Generate face encodings for the uploaded student images.",
     generate_encodes, 7, "#ab7e1d")
 
-# Create Quit button
 btn_quit = tk.Button(app, text="Quit Application", command=quit_application, width=30, height=2, bg="#a13333", fg="white")
 btn_quit.pack(pady=10, padx=20, anchor="w")
-
-# Start the Tkinter main loop
 app.mainloop()
+
