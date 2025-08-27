@@ -30,11 +30,9 @@ capture.set(4, WEBCAM_HEIGHT)
 
 background = cv.imread(r'Resources/Background2.png')
 
-# student details area
 studentDetailsPaths = os.listdir('Resources/StudentDetailsArea')
 studentDetailsList = [cv.imread(os.path.join('Resources/StudentDetailsArea', path)) for path in studentDetailsPaths]
 
-# month background
 classOverview = cv.imread(r'Resources/classOverview/classOverviewbackground2.png')
 
 current_date = datetime.now()
@@ -42,7 +40,6 @@ year = current_date.year
 month = current_date.month
 daysInTheMonth = calendar.monthrange(year, month)[1]
 
-# loading encoded file
 encodedfile = open('EncodedImages.p', 'rb')
 encodedImagesWithIDs = pickle.load(encodedfile)
 encodedfile.close()
@@ -201,3 +198,4 @@ while True:
 
 capture.release()
 cv.destroyAllWindows()
+
