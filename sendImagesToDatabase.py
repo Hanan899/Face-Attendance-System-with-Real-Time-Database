@@ -13,7 +13,6 @@ firebase_admin.initialize_app(cred,{
 
 
 studentFacesPaths = os.listdir('Images')
-# print(f"Path: \n {studentFacesPaths}")
 
 for path in studentFacesPaths:
     fileName = f"Images/{path}"
@@ -21,3 +20,4 @@ for path in studentFacesPaths:
     bucket = storage.bucket()
     blob = bucket.blob(fileName)
     blob.upload_from_filename(fileName)
+
