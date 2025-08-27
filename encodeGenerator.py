@@ -3,8 +3,6 @@ import face_recognition
 import pickle
 import os
 
-
-# student face images
 studentFacesPaths = os.listdir('Images')
 
 studentFacesList = []
@@ -34,4 +32,5 @@ print("Encoding complete")
 file = open('EncodedImages.p', 'wb')
 pickle.dump(encodedImagesWithIDs, file)
 file.close()
+
 print("File saved")
